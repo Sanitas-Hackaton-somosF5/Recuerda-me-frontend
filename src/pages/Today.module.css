@@ -6,3 +6,15 @@
   max-width: 800px;        /* no más de 800px de ancho */
   margin: 0 auto;          /* centra en pantallas grandes */
 }
+
+.slot-group {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.slot-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #073a45;
+}
