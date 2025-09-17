@@ -19,7 +19,6 @@ const Today = () => {
     return (
         <div className={styles["today-container"]}>
             <Header />
-            <h2>Recordatorio de medicación</h2>
             <TodayTimeStamp />
 
             {intakes.length === 0 ? (

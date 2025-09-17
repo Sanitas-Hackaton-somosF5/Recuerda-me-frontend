@@ -9,7 +9,8 @@ const TodayTimeStamp = () => {
         day: "numeric",
     });
 
-    return <h2>Hoy es {timestamp}</h2>;
+    return <h2 style={{margin: 2 + 'rem'}}>Hoy es {timestamp}</h2>;
+
 };
 
 export default TodayTimeStamp;
