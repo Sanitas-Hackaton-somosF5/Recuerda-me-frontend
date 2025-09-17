@@ -3,7 +3,6 @@ export default function FormDemo() {
         <div className="container">
             <h1>Demo de estilos globales</h1>
             <p>Este es un ejemplo para ver todos los componentes que hemos creado.</p>
-
             {/* Botones */}
             <h2>Botones</h2>
             <button className="btn-filled">Botón Primario</button>
