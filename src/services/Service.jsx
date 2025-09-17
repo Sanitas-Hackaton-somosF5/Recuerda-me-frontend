@@ -24,3 +24,12 @@ export async function getAllMedicines() {
         console.error(err);
     }
 }
+
+export async function getMedicineById(id) {
+    try {
+        const res = await fetch(`${BASE_URL}${id}`);
+        return await res.json();
+    } catch (err) {
+        console.error(err);
+    }
+}
