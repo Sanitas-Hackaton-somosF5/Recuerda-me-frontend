@@ -1,0 +1,85 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "name": "Ana",
+            "email": "ana@email.com",
+            "password": "123456"
+        }
+    ],
+    "medicines": [
+        {
+            "id": "1",
+            "userId": 1,
+            "name": "Ibuprofeno",
+            "dose": "600mg",
+            "startDate": "2025-09-17",
+            "endDate": "2025-09-23",
+            "intakeSlots": [
+                "DESAYUNO",
+                "COMIDA",
+                "CENA"
+            ]
+        },
+        {
+            "id": "8e26"
+        },
+        {
+            "id": "d861",
+            "name": "Mariany",
+            "dose": "MAriany",
+            "startDate": "2025-09-12",
+            "endDate": "2025-09-27",
+            "intakeSlots": [
+                "COMIDA"
+            ]
+        },
+        {
+            "id": "bfd4",
+            "name": "Mari",
+            "dose": "MariCarmen",
+            "description": "description",
+            "startDate": "2025-09-04",
+            "endDate": "2025-09-20",
+            "intakeSlots": [
+                "COMIDA",
+                "CENA"
+            ]
+        },
+        {
+            "name": "Mariany",
+            "dose": "600mg",
+            "startDate": "2025-09-17",
+            "endDate": "2025-09-23",
+            "intakeSlots": [
+                "DESAYUNO",
+                "COMIDA",
+                "CENA"
+            ],
+            "id": "41e8"
+        },
+        {
+            "id": "98d5",
+            "name": "Ibuprofeno",
+            "dose": "600mg",
+            "startDate": "2025-09-17",
+            "endDate": "2025-09-23",
+            "intakeSlots": [
+                "DESAYUNO",
+                "COMIDA",
+                "CENA"
+            ]
+        }
+    ],
+    "intakes-today": [
+        {
+            "id": "1",
+            "medication_name": "Ibuprofeno",
+            "date": "2025-09-17",
+            "slot": "BREAKFAST",
+            "status": "PENDING",
+            "description": "description",
+            "dose": "string Dosage"
+        }
+    ]
+}
