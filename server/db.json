@@ -9,7 +9,7 @@
     ],
     "medicines": [
         {
-            "id": "1",
+            "id": "100",
             "userId": 1,
             "name": "Ibuprofeno",
             "dose": "600mg",
@@ -20,9 +20,6 @@
                 "COMIDA",
                 "CENA"
             ]
-        },
-        {
-            "id": "8e26"
         },
         {
             "id": "d861",
@@ -69,17 +66,186 @@
                 "COMIDA",
                 "CENA"
             ]
+        },
+        {
+            "id": "1",
+            "userId": 1,
+            "name": "Ibuprofeno",
+            "dose": "600mg",
+            "startDate": "2025-09-17",
+            "endDate": "2025-09-23",
+            "intakeSlots": [
+                "DESAYUNO",
+                "COMIDA",
+                "CENA"
+            ]
+        },
+        {
+            "id": "2",
+            "userId": 1,
+            "name": "Paracetamol",
+            "dose": "1g",
+            "startDate": "2025-09-18",
+            "endDate": "2025-09-22",
+            "intakeSlots": [
+                "COMIDA",
+                "CENA"
+            ]
+        },
+        {
+            "id": "3",
+            "userId": 1,
+            "name": "Amoxicilina",
+            "dose": "500mg",
+            "startDate": "2025-09-17",
+            "endDate": "2025-09-20",
+            "intakeSlots": [
+                "DESAYUNO",
+                "CENA"
+            ]
+        },
+        {
+            "id": "4",
+            "userId": 1,
+            "name": "Omeprazol",
+            "dose": "20mg",
+            "startDate": "2025-09-17",
+            "endDate": "2025-09-23",
+            "intakeSlots": [
+                "DESAYUNO"
+            ]
+        },
+        {
+            "id": "5",
+            "userId": 1,
+            "name": "Vitamina D",
+            "dose": "2000UI",
+            "startDate": "2025-09-19",
+            "endDate": "2025-09-23",
+            "intakeSlots": [
+                "DESAYUNO"
+            ]
+        },
+        {
+            "id": "6",
+            "userId": 1,
+            "name": "Aspirina",
+            "dose": "100mg",
+            "startDate": "2025-09-17",
+            "endDate": "2025-09-23",
+            "intakeSlots": [
+                "COMIDA"
+            ]
+        },
+        {
+            "id": "7",
+            "userId": 1,
+            "name": "Metformina",
+            "dose": "850mg",
+            "startDate": "2025-09-17",
+            "endDate": "2025-09-23",
+            "intakeSlots": [
+                "DESAYUNO",
+                "CENA"
+            ]
+        },
+        {
+            "id": "8",
+            "userId": 1,
+            "name": "Loratadina",
+            "dose": "10mg",
+            "startDate": "2025-09-17",
+            "endDate": "2025-09-23",
+            "intakeSlots": [
+                "DESAYUNO"
+            ]
+        },
+        {
+            "id": "9",
+            "userId": 1,
+            "name": "Atorvastatina",
+            "dose": "40mg",
+            "startDate": "2025-09-17",
+            "endDate": "2025-09-23",
+            "intakeSlots": [
+                "CENA"
+            ]
+        },
+        {
+            "id": "10",
+            "userId": 1,
+            "name": "Diazepam",
+            "dose": "5mg",
+            "startDate": "2025-09-17",
+            "endDate": "2025-09-19",
+            "intakeSlots": [
+                "NOCHE"
+            ]
         }
     ],
     "intakes-today": [
         {
-            "id": "1",
+            "id": "t1",
             "medication_name": "Ibuprofeno",
             "date": "2025-09-17",
-            "slot": "BREAKFAST",
+            "slot": "DESAYUNO",
             "status": "PENDING",
-            "description": "description",
-            "dose": "string Dosage"
+            "dose": "600mg",
+            "description": "Para dolor e inflamación"
+        },
+        {
+            "id": "t2",
+            "medication_name": "Amoxicilina",
+            "date": "2025-09-17",
+            "slot": "DESAYUNO",
+            "status": "TAKEN",
+            "dose": "500mg",
+            "description": "Antibiótico"
+        },
+        {
+            "id": "t3",
+            "medication_name": "Omeprazol",
+            "date": "2025-09-17",
+            "slot": "DESAYUNO",
+            "status": "PENDING",
+            "dose": "20mg",
+            "description": "Protector gástrico"
+        },
+        {
+            "id": "t4",
+            "medication_name": "Aspirina",
+            "date": "2025-09-17",
+            "slot": "COMIDA",
+            "status": "PENDING",
+            "dose": "100mg",
+            "description": "Anticoagulante"
+        },
+        {
+            "id": "t5",
+            "medication_name": "Metformina",
+            "date": "2025-09-17",
+            "slot": "CENA",
+            "status": "PENDING",
+            "dose": "850mg",
+            "description": "Para control de glucosa"
+        },
+        {
+            "id": "t6",
+            "medication_name": "Atorvastatina",
+            "date": "2025-09-17",
+            "slot": "CENA",
+            "status": "PENDING",
+            "dose": "40mg",
+            "description": "Para colesterol"
+        },
+        {
+            "id": "t7",
+            "medication_name": "Diazepam",
+            "date": "2025-09-17",
+            "slot": "NOCHE",
+            "status": "PENDING",
+            "dose": "5mg",
+            "description": "Ansiolítico"
         }
     ]
 }

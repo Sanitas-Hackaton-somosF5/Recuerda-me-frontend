@@ -1,6 +1,6 @@
 import React from 'react'
-const URL_API_MEDICINE = "http://localhost:3000/medicines/";
-const URL_API_INTAKES_TODAY = "http://localhost:3000/intakes-today";
+const URL_API_MEDICINE = "http://localhost:3001/medicines/";
+const URL_API_INTAKES_TODAY = "http://localhost:3001/intakes-today";
 
 
 export async function createMedicine(medicine) {
