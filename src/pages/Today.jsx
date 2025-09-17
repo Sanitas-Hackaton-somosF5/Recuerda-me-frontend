@@ -1,5 +1,7 @@
 import React from 'react'
 import MedicationCard from '../components/MedicationCard'
+import TodayTimeStamp from '../components/TodayTimeStamp'
+
 
 const Today = () => {
 
@@ -13,8 +15,8 @@ const Today = () => {
 
     return (
         <div>
-            <h2>Hoy</h2>
-            //TODO Hoy 17 septiembre
+            <TodayTimeStamp />
+            
             <ul>
                 {medications.map(med => (
                     <MedicationCard 
