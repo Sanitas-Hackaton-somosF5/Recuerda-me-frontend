@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import IntakeCard from '../components/IntakeCard'
 import TodayTimeStamp from '../components/TodayTimeStamp'
 import styles from './Today.module.css'
+import Header from '../components/Header'
 
 
 const Today = () => {
@@ -17,6 +18,7 @@ const Today = () => {
 
     return (
         <div className={styles["today-container"]}>
+            <Header />
             <h2>Recordatorio de medicación</h2>
             <TodayTimeStamp />
 

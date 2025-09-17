@@ -1,6 +1,13 @@
 import React from "react";
 import styles from "./IntakeCard.module.css";
 
+
+const statusMap = {
+  PENDING: "Pendiente",
+  TAKEN: "Tomada",
+  MISSED: "Perdida"
+};
+
 const IntakeCard = ({ name, description, dosage, status, slot }) => {
     return (
         <div className={styles["intake-card"]}>
@@ -10,7 +17,7 @@ const IntakeCard = ({ name, description, dosage, status, slot }) => {
             <div className={styles["intake-body"]}>
 
                 <p className={styles["intake-slot"]}>🕒 Horario: {slot}</p>
-                <p className={styles["intake-status"]}>Estado: {status}</p>
+                <p className={styles["intake-status"]}>{statusMap[status] || status}</p>
                 <p className={styles["intake-dosage"]}>💊 Dosis: {dosage}</p>
                 
                 
