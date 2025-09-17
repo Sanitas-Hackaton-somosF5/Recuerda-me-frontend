@@ -1,0 +1,8 @@
+.today-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centra horizontalmente */
+  padding: 2rem 1rem;
+  max-width: 800px;        /* no más de 800px de ancho */
+  margin: 0 auto;          /* centra en pantallas grandes */
+}

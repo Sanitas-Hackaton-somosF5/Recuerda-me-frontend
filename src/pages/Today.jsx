@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MedicationCard from '../components/MedicationCard'
 import TodayTimeStamp from '../components/TodayTimeStamp'
+import styles from './Today.module.css'
 
 
 const Today = () => {
@@ -15,7 +16,7 @@ const Today = () => {
     }, []);
 
     return (
-        <div>
+        <div className={styles["today-container"]}>
             <h2>Recordatorio de medicación</h2>
             <TodayTimeStamp />
 
