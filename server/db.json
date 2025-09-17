@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Ana",
+      "email": "ana@email.com",
+      "password": "123456"
+    }
+  ],
+  "medicines": [
+    {
+      "id": "1",
+      "userId": 1,
+      "name": "Ibuprofeno",
+      "dose": "600mg",
+      "startDate": "2025-09-17",
+      "endDate": "2025-09-23",
+      "intakeSlots": [
+        "DESAYUNO",
+        "COMIDA",
+        "CENA"
+      ]
+    },
+    {
+      "id": "8e26"
+    },
+    {
+      "id": "d861",
+      "name": "Mariany",
+      "dose": "MAriany",
+      "startDate": "2025-09-12",
+      "endDate": "2025-09-27",
+      "intakeSlots": [
+        "COMIDA"
+      ]
+    },
+    {
+      "id": "bfd4",
+      "name": "Mari",
+      "dose": "MariCarmen",
+      "startDate": "2025-09-04",
+      "endDate": "2025-09-20",
+      "intakeSlots": [
+        "COMIDA",
+        "CENA"
+      ]
+    },
+    {
+      "id": "41e8",
+      "name": "teste",
+      "dose": "teste",
+      "startDate": "2025-09-05",
+      "endDate": "2025-09-19",
+      "intakeSlots": [
+        "COMIDA",
+        "CENA"
+      ]
+    },
+    {
+      "id": "98d5",
+      "name": "Ibuprofeno",
+      "dose": "600mg",
+      "startDate": "2025-09-17",
+      "endDate": "2025-09-23",
+      "intakeSlots": [
+        "DESAYUNO",
+        "COMIDA",
+        "CENA"
+      ]
+    }
+  ],
+  "intakes": [
+    {
+      "id": "1",
+      "medicineId": 1,
+      "userId": 1,
+      "slot": "DESAYUNO",
+      "date": "2025-09-17",
+      "status": "pending"
+    },
+    {
+      "id": "2",
+      "medicineId": 1,
+      "userId": 1,
+      "slot": "COMIDA",
+      "date": "2025-09-17",
+      "status": "pending"
+    },
+    {
+      "id": "3",
+      "medicineId": 1,
+      "userId": 1,
+      "slot": "CENA",
+      "date": "2025-09-17",
+      "status": "pending"
+    }
+  ]
+}
