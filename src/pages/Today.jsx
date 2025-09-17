@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import MedicationCard from '../components/MedicationCard'
+import IntakeCard from '../components/IntakeCard'
 import TodayTimeStamp from '../components/TodayTimeStamp'
 import styles from './Today.module.css'
 
@@ -24,7 +24,7 @@ const Today = () => {
                 <p>No tienes tomas programadas para hoy ✅.</p>
             ) : (
                 intakes.map((intake) => (
-                    <MedicationCard
+                    <IntakeCard
                         key={intake.id}
                         name={intake.medication_name}
                         dosage={intake.dose}

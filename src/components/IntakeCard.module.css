@@ -1,33 +1,36 @@
-.medication-card {
+.intake-card {
     background: white;
     border-radius: 12px;
     padding: 16px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     border-left: 4px solid rgb(0, 121, 200);
     transition: transform 0.2s;
+
+    width: 100%;
     
 }
 
-.medication-card:hover {
+.intake-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.medication-header .medication-body {
+.intake-header .intake-body {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
 }
 
-.medication-name {
+.intake-name {
     font-size: 18px;
     font-weight: 600;
     color: #333;
 }
 
-.medication-description {
+.intake-description {
     padding: 4px 8px;
     border-radius: 12px;
     font-size: 12px;
@@ -35,10 +38,11 @@
     color: grey;
 }
 
-.medication-dosage {
+.intake-dosage {
     padding: 4px 8px;
     border-radius: 12px;
     font-size: 12px;
     font-weight: 500;
     color: lightcoral
 }
+
