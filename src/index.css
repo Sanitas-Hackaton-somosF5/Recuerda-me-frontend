@@ -122,6 +122,24 @@ Estilo globales botónes
   opacity: 0.7;
 }
 
+.btn-filled-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+  border-radius: 7px;
+  min-width: 150px; /* ancho mínimo */
+  min-height: 44px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+
+  font-weight: 700; 
+  font-size: 1.1rem; 
+}
+
+.btn-filled:hover {
+  opacity: 0.7;
+}
+
 /* 
   Botón con estilo outline
   Fondo transparente, borde lineal con color primario, texto con color primario, borde redondeado y hover con fondo primario y texto blanco
@@ -142,6 +160,25 @@ Estilo globales botónes
 
 .btn-outline:hover {
   background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-outline-secondary {
+  background-color: transparent;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  min-width: 150px; /* ancho mínimo */
+  min-height: 44px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  font-weight: 700; 
+  font-size: 1.1rem; 
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--color-secondary);
   color: white;
 }
 
