@@ -46,3 +46,33 @@
     color: lightcoral
 }
 
+.status-pending {
+  color: #e1a100;
+  font-weight: 600;
+}
+
+.status-taken {
+  color: #0a8a0a;
+  font-weight: 600;
+}
+
+.status-missed {
+  color: #e21024;
+  font-weight: 600;
+}
+
+.intake-btn {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: rgb(0, 121, 200);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.intake-btn:hover {
+  opacity: 0.8;
+}
