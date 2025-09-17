@@ -1,5 +1,6 @@
 import Home from "../pages/Home.jsx";
 import Layout from "../layout/Layout.jsx";
+import Today from "../pages/Today.jsx";
 import { createBrowserRouter } from "react-router-dom";
 
 const routerRecuerda = createBrowserRouter([
@@ -11,6 +12,10 @@ const routerRecuerda = createBrowserRouter([
                 index: true,
                 element: <Home />,
             },
+            {
+                path: "today",
+                element: <Today />,
+            }
         ],
     },
 ]);

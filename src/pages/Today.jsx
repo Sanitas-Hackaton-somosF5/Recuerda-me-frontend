@@ -1,8 +1,9 @@
 import React from 'react'
+import MedicationCard from '../components/MedicationCard'
 
 const Today = () => {
 
-    //Fake Data
+    //Mock up Data
     const medications = [
         { id: 1, name: "Omeprazol", description: "Descripcion del medicamento Omeprazol", dosage: "200mg" },
         { id: 2, name: "Paracetamol", description: "Descripcion del medicamento Paracetamol", dosage: "400mg" },
@@ -15,9 +16,11 @@ const Today = () => {
             <h2>Hoy</h2>
             <ul>
                 {medications.map(med => (
-                    <li key={med.id}>
-                        {med.name} - {med.time} - {med.status}
-                    </li>
+                    <MedicationCard 
+                    key={med.id} 
+                    name={med.name} 
+                    description={med.description} 
+                    dosage={med.dosage} />
                 ))}
             </ul>
         </div>

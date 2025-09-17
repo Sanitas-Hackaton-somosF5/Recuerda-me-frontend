@@ -1,0 +1,17 @@
+.medCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: #f9f9f9;
+  transition: 0.2s;
+}
+
+.medCard:hover {
+  background-color: #eef;
+}
+
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
