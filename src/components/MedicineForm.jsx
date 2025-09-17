@@ -47,7 +47,7 @@ const MedicineForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="form-background" onSubmit={handleSubmit}>
             <input
                 type="text"
                 name="name"
@@ -103,7 +103,7 @@ const MedicineForm = () => {
                 Cena
             </label>
 
-            <button type="submit">Submit</button>
+            <button className="btn-outline" type="submit">Submit</button>
             <button type="button" onClick={handleReset}>
                 Reset
             </button>
