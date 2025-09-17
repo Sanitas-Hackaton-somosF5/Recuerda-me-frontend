@@ -113,6 +113,9 @@ Estilo globales botónes
   border: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
+
+  font-weight: 700; 
+  font-size: 1.1rem; 
 }
 
 .btn-filled:hover {
@@ -132,6 +135,9 @@ Estilo globales botónes
   border-radius: 7px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+
+  font-weight: 700; 
+  font-size: 1.1rem; 
 }
 
 .btn-outline:hover {
