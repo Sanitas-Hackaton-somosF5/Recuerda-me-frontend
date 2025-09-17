@@ -27,13 +27,19 @@ const IntakeCard = ({ name, description, dosage, status, slot, onUpdateStatus })
         <p className={styles["intake-dosage"]}>💊 Dosis: {dosage}</p>
         <p className={styles["intake-description"]}>Descripción: {description}</p>
 
-        {/* Botón para marcar como tomada */}
-        {status !== "TAKEN" && (
+        {status !== "TAKEN" ? (
           <button
             className={styles["intake-btn"]}
             onClick={() => onUpdateStatus("TAKEN")}
           >
             Marcar como tomada
+          </button>
+        ) : (
+          <button
+            className={styles["intake-btn"]}
+            onClick={() => onUpdateStatus("PENDING")}
+          >
+            Marcar como no tomada
           </button>
         )}
       </div>
