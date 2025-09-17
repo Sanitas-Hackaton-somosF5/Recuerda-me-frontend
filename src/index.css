@@ -1,68 +1,435 @@
+/* 
+  Variables raíz para colores y tipografía
+  Definir variables CSS globales para un tema consistente y uso de fuentes en toda la aplicación
+*/
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color-darkest: #073a45;
+  --color-primary: #009fe3;
+  --color-secondary: #c3095d;
+  --color-text: #282828;
+  --color-medium-grey: #d0d0d0;
+  --color-alert: #e21024;
+  --color-light-grey: #f7f9f7;
+  --color-background: #ffffff;
+
+  /* Tipografía global */
+  --font-family-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* 
+  Reseteo básico de CSS
+  Eliminar margen y relleno por defecto, establecer box-sizing en border-box para un control más fácil del diseño
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  Estilos base para html y body
+  Asegurar altura completa y aplicar fuente global y colores de fondo para la aplicación
+*/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-background);
+  color: var(--color-text);
   line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+/* ========================
+  Estilos de tipografía para encabezados y párrafos
+  Fuente consistente, color, margen y altura de línea para elementos de texto
+  ======================== */
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+  font-weight: 600;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2.5rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* ========================
+  Clase para el fondo de formularios
+  Proporciona borde transparente, esquinas redondeadas y un fondo claro para diferenciar el formulario del fondo general
+  ======================== */
+.form-background {
+  border: 0px ridge transparent;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: var(--color-light-grey);
+}
+
+/* ========================
+Estilo globales botónes
+   ======================== */
+
+/* 
+  Botón con fondo completo
+  Fondo con color primario, texto blanco, borde redondeado y efecto hover con opacidad al 70%
+*/
+.btn-filled {
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 7px;
+  min-width: 150px; /* ancho mínimo */
+  min-height: 44px;
+  border: none;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: opacity 0.3s ease;
+
+  font-weight: 700; 
+  font-size: 1.1rem; 
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.btn-filled:hover {
+  opacity: 0.7;
+}
+
+/* 
+  Botón con estilo outline
+  Fondo transparente, borde lineal con color primario, texto con color primario, borde redondeado y hover con fondo primario y texto blanco
+*/
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  min-width: 150px; /* ancho mínimo */
+  min-height: 44px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  font-weight: 700; 
+  font-size: 1.1rem; 
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* ======================== 
+  Estilos globales para inputs checkbox y radio button
+  Personalización de color, tamaño, esquinas redondeadas y transiciones suaves.
+    ======================== */
+
+/* Custom checkbox styles */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-medium-grey);
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  transition: border-color 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 0.35em;
+  top: 0.1em;
+  width: 0.3em;
+  height: 0.6em;
+  border: solid white;
+  border-width: 0 0.18em 0.18em 0;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+/* Radio button personalizado */
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-medium-grey);
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  transition: border-color 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.28em;
+  left: 0.28em;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  background: var(--color-primary);
+  transition: background 0.2s;
+}
+
+/* ========================
+  Estilos generales para etiquetas <label>
+  Proporciona fuente, color y espaciado consistente con el resto de la aplicación
+  ======================== */
+label {
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  font-size: 1rem;
+  padding: 0.2em 0.4em;
+  display: inline-block;
+  margin-bottom: 0.2em;
+  font-weight: 500;
+}
+
+/* 
+  Clase para labels que necesiten mostrar alerta o error
+  Texto rojo, fondo transparente y borde outline rojo
+  Mantiene padding y fuente consistente con los labels normales
+*/
+.label-alert {
+  color: var(--color-alert);
+  background: transparent;
+  outline: 1px solid var(--color-alert);
+  padding: 0.2em 0.4em;
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+/* ========================
+  Estilos globales para inputs de formulario (text, email, password, select, textarea)
+  Base, estados y utilidades para inputs accesibles y consistentes
+  ======================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  color: var(--color-text);
+  border: 1px solid var(--color-medium-grey);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 1px var(--color-primary);
+}
+
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+select:disabled,
+textarea:disabled {
+  background-color: var(--color-light-grey);
+  border-color: var(--color-medium-grey);
+  color: var(--color-medium-grey);
+  cursor: not-allowed;
+}
+
+/* Utilidades para estados de validación */
+.input-error {
+  border-color: var(--color-alert) !important;
+  color: var(--color-alert) !important;
+}
+
+.input-success { /* al seleccionar la etiqueta cambia de color */
+  border-color: #2a7a2a !important;
+  /* Verde oscuro */
+  color: var(--color-darkest) !important;
+}
+
+/* ========================
+  Clases de accesibilidad y utilidades
+  ======================== */
+
+/* Ocultar visualmente pero mantener para lectores de pantalla */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Centrar texto */
+.text-center {
+  text-align: center !important;
+}
+
+/* Ocultar elementos visualmente y del flujo */
+.hidden {
+  display: none !important;
+}
+
+/* ========================
+   Media Query: Tablets
+   ========================
+   Para pantallas de hasta 768px de ancho
+*/
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
   }
-  a:hover {
-    color: #747bff;
+
+  h2 {
+    font-size: 1.5rem;
   }
-  button {
-    background-color: #f9f9f9;
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.98rem;
+  }
+
+  .container {
+    max-width: 95%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .form-background {
+    padding: 0.7rem;
+    border-radius: 8px;
+  }
+
+  .header__nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+
+  .btn-filled,
+  .btn-outline {
+    font-size: 1rem;
+    padding: 0.6em 1.2em;
+  }
+}
+
+/* ========================
+   Media Query: Móviles
+   ========================
+   Para pantallas de hasta 480px de ancho
+*/
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-size: 0.95rem;
+  }
+
+  p {
+    font-size: 0.92rem;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .form-background {
+    padding: 0.5rem;
+    border-radius: 6px;
+  }
+
+  .header__nav {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  .btn-filled,
+  .btn-outline {
+    width: 100%;
+    font-size: 0.98rem;
+    padding: 0.65em 0.5em;
+    margin-bottom: 0.5em;
   }
 }
