@@ -28,7 +28,7 @@ export async function getAllMedicines() {
 
 export async function getMedicineById(id) {
     try {
-        const res = await fetch(`${BASE_URL}${id}`);
+        const res = await fetch(`${URL_API_MEDICINE}${id}`);
         return await res.json();
     } catch (err) {
         console.error(err);
@@ -37,7 +37,7 @@ export async function getMedicineById(id) {
 
 export async function updateMedicine(id, updatedData) {
     try {
-        const res = await fetch(`${BASE_URL}${id}`, {
+        const res = await fetch(`${URL_API_MEDICINE}${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updatedData)
@@ -48,7 +48,7 @@ export async function updateMedicine(id, updatedData) {
     }
 }
 
-export async function getAllItakes() {
+export async function getAllIntakes() {
     try {
         const res = await fetch(URL_API_INTAKES_TODAY);
         console.log(res);
