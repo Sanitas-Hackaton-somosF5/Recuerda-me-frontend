@@ -1,0 +1,48 @@
+.dateInput {
+    padding: 0.5rem 1rem;
+    border: 2px solid #0079C8;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.dateInput:focus {
+    border-color: #0079C8;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(40%) sepia(80%) saturate(200%) hue-rotate(180deg);
+}
+
+.formGroup>div {
+    margin-bottom: 1rem;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.inputSpacing {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.intakeSlots {
+    margin: 1.5rem 0;
+}
