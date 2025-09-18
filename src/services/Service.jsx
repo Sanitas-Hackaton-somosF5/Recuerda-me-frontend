@@ -95,7 +95,7 @@ export async function getIntakeById(id) {
 }
 
 // Actualizar toma
-export async function updateIntake(id, status) {
+/*export async function updateIntake(id, status) {
     try {
         const res = await fetch(`${URL_API_INTAKES_TODAY}/${id}/${TAKEN}`, {
             method: "PUT", //Patch
@@ -106,7 +106,24 @@ export async function updateIntake(id, status) {
     } catch (err) {
         console.error(err);
     }
+}*/
+
+
+export async function updateIntake(id, status) {
+    // TAKEN, PENDING, MISSED...
+    try {
+        const res = await fetch(`${URL_API_INTAKES_TODAY}/${id}/${status}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" }
+        });
+        return res.ok; 
+    } catch (err) {
+        console.error(err);
+        return false;
+    }
 }
+
+
 
 // Eliminar toma
 export async function deleteIntake(id) {

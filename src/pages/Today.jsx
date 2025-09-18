@@ -3,7 +3,7 @@ import IntakeCard from '../components/IntakeCard';
 import TodayTimeStamp from '../components/TodayTimeStamp';
 import styles from './Today.module.css';
 import Header from '../components/Header';
-import { getAllIntakes } from '../services/Service';
+import { getAllIntakes, updateIntake } from '../services/Service';
 
 const slotOrder = ["DESAYUNO", "COMIDA", "CENA"];
 
@@ -48,10 +48,15 @@ const Today = () => {
                                     description={intake.description}
                                     status={intake.status}
                                     slot={intake.slot}
-                                    onUpdateStatus={(newStatus) => {
-                                        setIntakes(intakes.map(i =>
-                                            i.id === intake.id ? { ...i, status: newStatus } : i
-                                        ));
+                                    onUpdateStatus={async (newStatus) => {
+                                        const success = await updateIntake(intake.id, newStatus);
+                                        if (success) {
+                                            setIntakes(intakes.map(i =>
+                                                i.id === intake.id ? { ...i, status: newStatus } : i
+                                            ));
+                                        } else {
+                                            alert("No se pudo actualizar la toma");
+                                        }
                                     }}
                                 />
                             ))}
