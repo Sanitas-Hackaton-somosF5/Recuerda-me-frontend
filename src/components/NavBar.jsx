@@ -5,7 +5,7 @@ const Navbar = ({ setShowMedicationModal }) => {
   const [showUserMenu, setShowUserMenu] = useState(false);
   const userMenuRef = useRef(null);
 
-  // Detectar clic fuera y cerrar menú
+  // Detect click outside and close menu
   useEffect(() => {
     function handleClickOutside(event) {
       if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
@@ -27,7 +27,7 @@ const Navbar = ({ setShowMedicationModal }) => {
 
         {/* Menu Items */}
         <div className={styles.menu}>
-          {/* Agregar Medicamento Button */}
+          {/* Add Medication Modal */}
           <button
             className={styles.addButton}
             onClick={() => setShowMedicationModal(true)}
