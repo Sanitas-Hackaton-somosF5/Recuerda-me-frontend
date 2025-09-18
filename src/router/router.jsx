@@ -12,7 +12,7 @@ const routerRecuerda = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Home />,
+                element: <Today />,
             },
             {
                 path: "today",
@@ -28,11 +28,6 @@ const routerRecuerda = createBrowserRouter([
             },
         ],
     },
-    //SIN NAV Y FOOTER
-    //   {
-    //     path: "/login",
-    //     element: <Login />,
-    //   }, 
 ]);
 
 export default routerRecuerda;
