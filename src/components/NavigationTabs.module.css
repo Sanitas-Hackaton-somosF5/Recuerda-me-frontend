@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 80px; /* ajusta según tu Header */
+  z-index: 40;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tab:hover {
+  color: #555;
+}
+
+.active {
+  color: rgb(0, 121, 200);
+  border-bottom: 2px solid rgb(0, 121, 200);
+}

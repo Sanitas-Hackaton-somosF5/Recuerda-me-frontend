@@ -1,0 +1,69 @@
+.header {
+  background: url("../assets/logo-header-xs.png");
+  background-position: right center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% auto !important;
+
+  position: sticky;
+  top: 0;
+  z-index: 40;
+
+
+  color: white;
+  text-align: center;
+  padding: 40px 15px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  width: 100%;
+
+  /* oscurecer ligeramente la imagen para mejorar contraste */
+  background-blend-mode: overlay;
+  background-color: rgba(0, 121, 200, 0.5);
+}
+
+/* Título y subtítulo */
+.header-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.header-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ======================
+   Responsive
+   ====================== */
+
+/* Tablets (≤ 768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 12px;
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* Móviles (≤ 480px) */
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 10px;
+  }
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.8rem;
+  }
+}
