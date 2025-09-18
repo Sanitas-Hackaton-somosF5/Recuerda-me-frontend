@@ -179,7 +179,7 @@
             "startDate": "2025-09-17",
             "endDate": "2025-09-19",
             "intakeSlots": [
-                "NOCHE"
+                "CENA"
             ]
         }
     ],
@@ -242,7 +242,7 @@
             "id": "t7",
             "medication_name": "Diazepam",
             "date": "2025-09-17",
-            "slot": "NOCHE",
+            "slot": "CENA",
             "status": "PENDING",
             "dose": "5mg",
             "description": "Ansiolítico"
