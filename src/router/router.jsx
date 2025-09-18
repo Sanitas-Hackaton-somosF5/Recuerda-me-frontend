@@ -17,9 +17,22 @@ const routerRecuerda = createBrowserRouter([
             {
                 path: "today",
                 element: <Today />,
-            }
+            },
+            {
+                path: "/medicineList",
+                element: <MedicineList />,
+            },
+            {
+                path: "login",
+                element: <Login />,
+            },
         ],
     },
+    //SIN NAV Y FOOTER
+    //   {
+    //     path: "/login",
+    //     element: <Login />,
+    //   }, 
 ]);
 
 export default routerRecuerda;

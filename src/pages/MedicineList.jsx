@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getAllMedicines } from "../services/Service.jsx";
+import { getAllMedicines, deleteMedicine } from "../services/Service.jsx";
+import MedicineCard from "../components/MedicineCard.jsx";
+import styles from './Today.module.css';
 
 const MedicineList = () => {
     const [medicines, setMedicines] = useState([]);
@@ -13,24 +15,39 @@ const MedicineList = () => {
                 console.error("Error fetching medicines:", err);
             }
         };
-
         fetchMedicines();
     }, []);
 
+    const handleDelete = async (id) => {
+        const ok = await deleteMedicine(id);
+        if (ok) {
+            setMedicines(prev => prev.filter(med => med.id !== id));
+        }
+    };
+
     return (
-        <div><h2>Lista de Medicamentos</h2>
+        <div className={styles["today-container"]}>
+            <h2>Lista de Medicamentos</h2>
             {medicines.length === 0 ? (
                 <p>No hay medicamentos registrados.</p>
             ) : (
-                <ul>
+                <div className={styles["slot-group"]}>
                     {medicines.map((med) => (
-                        <li key={med.id}>
-                            {med.name} - {med.dose} ({med.startDate} a {med.endDate})
-                        </li>
+                        <MedicineCard
+                            key={med.id}
+                            id={med.id}
+                            name={med.name}
+                            dose={med.dose}
+                            startDate={med.startDate}
+                            endDate={med.endDate}
+                            description={med.description}
+                            onDelete={handleDelete}
+                        />
                     ))}
-                </ul>
-            )}</div>
-    )
-}
+                </div>
+            )}
+        </div>
+    );
+};
 
-export default MedicineList
+export default MedicineList;
