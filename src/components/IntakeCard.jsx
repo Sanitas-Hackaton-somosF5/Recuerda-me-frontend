@@ -36,19 +36,20 @@ const IntakeCard = ({ name, dosage, status, description, onUpdateStatus }) => {
 
         {status !== "TAKEN" ? (
           <button
-            className={styles["intake-btn"]}
+            className={`${styles["intake-btn-pending"]}`}
             onClick={() => onUpdateStatus("TAKEN")}
           >
             Marcar como tomada
           </button>
         ) : (
           <button
-            className={styles["intake-btn"]}
+            className={`${styles["intake-btn-taken"]}`}
             onClick={() => onUpdateStatus("PENDING")}
           >
-            Marcar como no tomada
+            Marcar como pendiente
           </button>
         )}
+
       </div>
     </div>
   );
