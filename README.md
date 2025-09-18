@@ -79,8 +79,11 @@ Componentes testeados
 
 Correr todos los tests:
 ```
-npx vitest
+npx vitest --watch
 ```
+
+Pantallazo de tests pasando:
+![Pantallazo de tests pasando](./public/vitest-ok.PNG)
 
 ## Equipo RecuerdaMe
 
