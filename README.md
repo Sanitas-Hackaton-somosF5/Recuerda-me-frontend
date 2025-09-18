@@ -1,12 +1,71 @@
-# React + Vite
+# Recuerda-me App
+Una aplicación web permite registrar medicamentos y ver los medicamentos ya tomados.
+Este frontend fue desarrollado en React y se comunica con un backend mediante API REST.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React: biblioteca principal para la interfaz.
+- JavaScript / HTML5 / CSS3: desarrollo frontend.
+- Vite: build rápido y moderno.
+- @vitejs/plugin-react-swc: optimización para React con SWC.
+- Testing: Vitest y Testing Library para pruebas de componentes React.
+- Fetch API: comunicación con el backend mediante API REST.
 
-## Expanding the ESLint configuration
+## Funcionalidades del Frontend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Registro de medicamentos: formulario para agregar un medicamento.
+- Listado de medicamentos: muestra todos los medicamentos guardados.
+- Marcar como tomado: opción para indicar que el medicamento fue tomado.
+- Visualización por momento del día: los medicamentos se muestran organizados en desayuno, almuerzo y cena.
+
+## Funcionalidades del Frontend
+
+Medicamentos
+- Crear y eliminar medicamentos.
+- Listar todos los medicamentos registrados.
+
+Tomas
+
+- Visualizar tomas organizadas en desayuno, almuerzo y cena.
+- Marcar una toma como tomada o pendiente.
+
+## Ejecución
+
+1. Clonar el repositorio:
+
+```
+git clone https://github.com/Sanitas-Hackaton-somosF5/Recuerda-me-frontend.git
+```
+
+2. Entrar en la carpeta del proyecto:
+```
+cd Recuerda-me-frontend
+```
+
+3. Instalar las dependencias:
+```
+npm install
+```
+
+4. Iniciar la aplicación:
+```
+npm run dev
+```
+
+La aplicación se abre en >> http://localhost:5173/
+
+## Equipo RecuerdaMe
+
+Este proyecto ha sido desarrollado por un equipo comprometido con mejorar la gestión de medicamentos y la salud de las usuarias:
+
+- Alexandra Rojas - Desarrolladora backend
+- Jesús Martín - Desarrollador backend
+- Lara Pla - Desarrolladora backend
+- Mari Carmen Tajuelo - Desarrolladora frontend
+- Paula Apse - Desarrolladora frontend
+- Mariany de Araujo - Desarrolladora frontend
+- Rocío Alondra - Desarrolladora frontend
+
+## Licencia
+Este proyecto está bajo la Licencia MIT.
