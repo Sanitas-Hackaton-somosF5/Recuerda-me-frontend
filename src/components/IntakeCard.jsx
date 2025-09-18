@@ -15,7 +15,7 @@ const statusClassMap = {
 
 const IntakeCard = ({ name, dosage, status, description, onUpdateStatus }) => {
   return (
-    <div className={styles["intake-card"]}>
+    <div className={`${styles["intake-card"]} ${styles[status.toLowerCase()]}`}>
       {/* Header */}
       <div className={styles["intake-header"]}>
         <h3 className={styles["intake-name"]}>{name}</h3>
