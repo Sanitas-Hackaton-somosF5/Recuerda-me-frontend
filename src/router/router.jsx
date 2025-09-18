@@ -28,11 +28,6 @@ const routerRecuerda = createBrowserRouter([
             },
         ],
     },
-    //SIN NAV Y FOOTER
-    //   {
-    //     path: "/login",
-    //     element: <Login />,
-    //   }, 
 ]);
 
 export default routerRecuerda;
