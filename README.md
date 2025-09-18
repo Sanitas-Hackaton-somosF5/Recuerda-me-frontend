@@ -55,6 +55,33 @@ npm run dev
 
 La aplicación se abre en >> http://localhost:5173/
 
+## Pruebas
+
+El proyecto incluye pruebas unitarias con Vitest para garantizar que los componentes de React funcionan correctamente.
+
+Componentes testeados
+
+1. Footer: verifica que se muestran correctamente el título, el icono, las marcas y el copyright.
+2. Header: comprueba que el título y el subtítulo se renderizan.
+3. MedicineCard:
+    - Muestra la información del medicamento correctamente.
+    - Ejecuta la función de borrar al hacer clic en el botón.
+    - No muestra la descripción si no se proporciona.
+
+4. MedicineForm:
+
+    - Renderiza todos los campos de entrada, checkboxes y botones.
+    - Envía los datos correctamente incluyendo los horarios de toma (desayuno, comida, cena).
+    - Comprueba que los campos obligatorios tienen el atributo required.
+
+### Ejecución de pruebas
+---
+
+Correr todos los tests:
+```
+npx vitest
+```
+
 ## Equipo RecuerdaMe
 
 Este proyecto ha sido desarrollado por un equipo comprometido con mejorar la gestión de medicamentos y la salud de las usuarias:
