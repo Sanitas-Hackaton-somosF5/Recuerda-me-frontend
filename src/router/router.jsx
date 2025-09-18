@@ -2,6 +2,7 @@ import Home from "../pages/Home.jsx";
 import Layout from "../layout/Layout.jsx";
 import Today from "../pages/Today.jsx";
 import MedicineList from "../pages/MedicineList.jsx";
+import Login from "../pages/login.jsx";
 import { createBrowserRouter } from "react-router-dom";
 
 const routerRecuerda = createBrowserRouter([
@@ -16,10 +17,6 @@ const routerRecuerda = createBrowserRouter([
             {
                 path: "today",
                 element: <Today />,
-            },
-            {
-                path: "/medicineList",
-                element: <MedicineList />,
             }
         ],
     },
