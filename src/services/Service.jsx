@@ -59,7 +59,7 @@ export async function deleteMedicine(id) {
     }
 }
 
-    // Crear toma
+// Crear toma
 export async function createIntake(intake) {
     try {
         const res = await fetch(`${URL_API_INTAKES_TODAY}`, {
@@ -95,14 +95,14 @@ export async function getIntakeById(id) {
 }
 
 // Actualizar toma
-export async function updateIntake(id, updatedData) {
+export async function updateIntake(id, status) {
     try {
-        const res = await fetch(`${URL_API_INTAKES_TODAY}/${id}`, {
-            method: "PUT",
+        const res = await fetch(`${URL_API_INTAKES_TODAY}/${id}/${TAKEN}`, {
+            method: "PUT", //Patch
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updatedData)
+            body: JSON.stringify(updatedData)// Nao pprecisa enviar o corpo
         });
-        return await res.json();
+        return await res.json();// Nao pprecisa enviar o corpo
     } catch (err) {
         console.error(err);
     }
