@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import authService from '../services/authservice';
 
 export default function LoginForm() {
     const [formData, setFormData] = useState({
@@ -9,33 +10,41 @@ export default function LoginForm() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setFormData(prev => ({
             ...prev,
             [name]: type === 'checkbox' ? checked : value
         }));
+
+        if (error) {
+            setError('');
+        }
     };
 
-    
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setError('');
 
         try {
-         
-            console.log('Datos del login:', formData);
-            
-            
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            // Redirigir o mostrar éxito
-            alert('Login exitoso!');
+            const result = await authService.login({
+                email: formData.email.trim().toLowerCase(),
+                password: formData.password
+            });
+
+            if (result.success) {
+                console.log('Login exitoso:', result.data);
+                
+                if (formData.rememberMe) {
+                    localStorage.setItem('rememberMe', 'true');
+                }
+                
+            }
             
         } catch (err) {
-            setError('Error al iniciar sesión. Verifica tus credenciales.');
+            console.error('Error en login:', err);
+            setError(err.message);
         } finally {
             setLoading(false);
         }
@@ -43,7 +52,6 @@ export default function LoginForm() {
 
     return (
         <form className="form-background" onSubmit={handleSubmit}>
-            {/* Mensaje de error */}
             {error && (
                 <div className="error-message">
                     <p style={{ color: 'var(--color-alert)', marginBottom: '1rem' }}>
@@ -52,7 +60,6 @@ export default function LoginForm() {
                 </div>
             )}
 
-            {/*  email */}
             <div className="input-group">
                 <label htmlFor="email">Correo electrónico</label>
                 <input 
@@ -66,7 +73,6 @@ export default function LoginForm() {
                 />
             </div>
 
-            {/* password*/}
             <div className="input-group">
                 <label htmlFor="password">Contraseña</label>
                 <input 
@@ -80,7 +86,6 @@ export default function LoginForm() {
                 />
             </div>
 
-            {/* Checkbox recordar */}
             <div className="checkbox-group">
                 <label>
                     <input 
@@ -93,11 +98,14 @@ export default function LoginForm() {
                 </label>
             </div>
 
-            {/* Botón submint */}
             <button 
                 type="submit" 
                 className="btn-filled"
                 disabled={loading}
+                style={{
+                    opacity: loading ? 0.7 : 1,
+                    cursor: loading ? 'not-allowed' : 'pointer'
+                }}
             >
                 {loading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
             </button>
