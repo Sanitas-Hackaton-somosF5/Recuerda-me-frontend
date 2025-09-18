@@ -20,7 +20,7 @@ describe("MedicineCard component", () => {
 
         expect(screen.getByText("Paracetamol")).toBeTruthy();
         expect(screen.getByText("💊 Dosis: 500mg")).toBeTruthy();
-        expect(screen.getByText("📅 2025-09-18 a 2025-09-25")).toBeTruthy();
+        expect(screen.getByText("📅 18-09-2025 a 25-09-2025")).toBeTruthy();
         expect(screen.getByText("📋 Para el dolor de cabeza")).toBeTruthy();
     });
 
