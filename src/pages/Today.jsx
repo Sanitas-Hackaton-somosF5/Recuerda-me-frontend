@@ -21,12 +21,6 @@ const Today = () => {
             .catch(err => console.error("Error fetching intakes:", err));
     }, []);
 
-    const updateIntakeStatus = (id, status) => {
-        setIntakes(intakes.map(intake =>
-            intake.id === id ? { ...intake, status } : intake
-        ));
-    };
-
     // Agrupar intakes por slot
     const groupedIntakes = slotOrder.reduce((acc, slot) => {
         acc[slot] = intakes.filter(intake => intake.slot === slot);
