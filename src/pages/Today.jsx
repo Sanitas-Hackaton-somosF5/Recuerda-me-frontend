@@ -5,8 +5,13 @@ import styles from './Today.module.css';
 import Header from '../components/Header';
 import { getAllIntakes, updateIntake } from '../services/Service';
 
-const slotOrder = ["DESAYUNO", "COMIDA", "CENA"];
+const slotOrder = ["BREAKFAST", "LUNCH", "DINNER"];
 
+const slotTranslations = {
+  BREAKFAST: "DESAYUNO",
+  LUNCH: "COMIDA",
+  DINNER: "CENA"
+};
 const Today = () => {
     const [intakes, setIntakes] = useState([]);
 
@@ -39,7 +44,7 @@ const Today = () => {
                 slotOrder.map(slot => (
                     groupedIntakes[slot]?.length > 0 && (
                         <div key={slot} className={styles["slot-group"]}>
-                            <h3 className={styles["slot-title"]}>{slot}</h3>
+                            <h3 className={styles["slot-title"]}>{slotTranslations[slot]}</h3>
                             {groupedIntakes[slot].map(intake => (
                                 <IntakeCard
                                     key={intake.id}
