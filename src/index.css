@@ -4,7 +4,7 @@
 */
 :root {
   --color-darkest: #073a45;
-  --color-primary: #009fe3;
+  --color-primary: #0079C8;
   --color-secondary: #c3095d;
   --color-text: #282828;
   --color-medium-grey: #d0d0d0;
@@ -50,6 +50,7 @@ body {
   Fuente consistente, color, margen y altura de línea para elementos de texto
   ======================== */
 
+/*h1*/
 h2,
 h3,
 h4 {
@@ -107,14 +108,15 @@ Estilo globales botónes
   background-color: var(--color-primary);
   color: white;
   border-radius: 7px;
-  min-width: 150px; /* ancho mínimo */
+  min-width: 150px;
+  /* ancho mínimo */
   min-height: 44px;
   border: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
 
-  font-weight: 700; 
-  font-size: 1.1rem; 
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 .btn-filled:hover {
@@ -125,14 +127,15 @@ Estilo globales botónes
   background-color: var(--color-secondary);
   color: white;
   border-radius: 7px;
-  min-width: 150px; /* ancho mínimo */
+  min-width: 150px;
+  /* ancho mínimo */
   min-height: 44px;
   border: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
 
-  font-weight: 700; 
-  font-size: 1.1rem; 
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 .btn-filled:hover {
@@ -147,14 +150,15 @@ Estilo globales botónes
   background-color: transparent;
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
-  min-width: 150px; /* ancho mínimo */
+  min-width: 150px;
+  /* ancho mínimo */
   min-height: 44px;
   border-radius: 7px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 
-  font-weight: 700; 
-  font-size: 1.1rem; 
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 .btn-outline:hover {
@@ -166,14 +170,15 @@ Estilo globales botónes
   background-color: transparent;
   color: var(--color-secondary);
   border: 1px solid var(--color-secondary);
-  min-width: 150px; /* ancho mínimo */
+  min-width: 150px;
+  /* ancho mínimo */
   min-height: 44px;
   border-radius: 7px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 
-  font-weight: 700; 
-  font-size: 1.1rem; 
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 .btn-outline-secondary:hover {
@@ -266,7 +271,7 @@ label {
   font-size: 1rem;
   padding: 0.2em 0.4em;
   display: inline-block;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.5em;
   font-weight: 500;
 }
 
@@ -334,7 +339,8 @@ textarea:disabled {
   color: var(--color-alert) !important;
 }
 
-.input-success { /* al seleccionar la etiqueta cambia de color */
+.input-success {
+  /* al seleccionar la etiqueta cambia de color */
   border-color: #2a7a2a !important;
   /* Verde oscuro */
   color: var(--color-darkest) !important;
@@ -581,11 +587,11 @@ textarea:disabled {
     max-width: 90%;
     margin: 1.5rem auto;
   }
-  
+
   .auth-header h1 {
     font-size: 2rem;
   }
-  
+
   .input-group {
     margin-bottom: 1rem;
   }
@@ -598,35 +604,35 @@ textarea:disabled {
     margin: 1rem auto;
     padding: 0 0.8rem;
   }
-  
+
   .auth-header {
     margin-bottom: 1.5rem;
   }
-  
+
   .auth-header h1 {
     font-size: 1.8rem;
   }
-  
+
   .auth-header p {
     font-size: 0.95rem;
   }
-  
+
   .form-background {
     padding: 1rem;
   }
-  
+
   .input-group {
     margin-bottom: 0.8rem;
   }
-  
+
   .checkbox-group {
     margin: 1rem 0;
   }
-  
+
   .auth-links {
     margin-top: 1.5rem;
   }
-  
+
   .auth-links p {
     font-size: 0.9rem;
   }

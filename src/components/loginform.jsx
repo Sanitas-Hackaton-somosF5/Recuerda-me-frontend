@@ -28,20 +28,15 @@ export default function LoginForm() {
         setError('');
 
         try {
-            const result = await authService.login({
-                email: formData.email.trim().toLowerCase(),
-                password: formData.password
-            });
 
-            if (result.success) {
-                console.log('Login exitoso:', result.data);
-                
-                if (formData.rememberMe) {
-                    localStorage.setItem('rememberMe', 'true');
-                }
-                
-            }
-            
+            console.log('Datos del login:', formData);
+
+
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            // Redirigir o mostrar éxito
+            alert('Login exitoso!');
+
         } catch (err) {
             console.error('Error en login:', err);
             setError(err.message);
@@ -62,34 +57,34 @@ export default function LoginForm() {
 
             <div className="input-group">
                 <label htmlFor="email">Correo electrónico</label>
-                <input 
-                    type="email" 
+                <input
+                    type="email"
                     id="email"
                     name="email"
                     placeholder="correo@ejemplo.com"
                     value={formData.email}
                     onChange={handleChange}
-                    required 
+                    required
                 />
             </div>
 
             <div className="input-group">
                 <label htmlFor="password">Contraseña</label>
-                <input 
-                    type="password" 
+                <input
+                    type="password"
                     id="password"
                     name="password"
                     placeholder="Ingresa tu contraseña"
                     value={formData.password}
                     onChange={handleChange}
-                    required 
+                    required
                 />
             </div>
 
             <div className="checkbox-group">
                 <label>
-                    <input 
-                        type="checkbox" 
+                    <input
+                        type="checkbox"
                         name="rememberMe"
                         checked={formData.rememberMe}
                         onChange={handleChange}
@@ -98,8 +93,9 @@ export default function LoginForm() {
                 </label>
             </div>
 
-            <button 
-                type="submit" 
+            {/* Botón submint */}
+            <button
+                type="submit"
                 className="btn-filled"
                 disabled={loading}
                 style={{

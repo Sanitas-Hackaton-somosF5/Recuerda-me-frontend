@@ -1,0 +1,57 @@
+.medicine-card {
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid rgb(0, 121, 200);
+    transition: transform 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+.medicine-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.medicine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.medicine-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.medicine-dosage,
+.medicine-dates {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+.medicine-divider {
+    border-top: 1px solid #e5e5e5;
+    margin: 12px 0;
+}
+
+.delete-btn {
+    background-color: #D32F2F;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+    font-size: 0.9rem;
+}
+
+.delete-btn:hover {
+    opacity: 0.8;
+}

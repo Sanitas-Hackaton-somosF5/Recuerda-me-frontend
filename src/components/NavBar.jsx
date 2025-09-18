@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./Navbar.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ setShowMedicationModal }) => {
   const [showUserMenu, setShowUserMenu] = useState(false);
   const userMenuRef = useRef(null);
+  const navigate = useNavigate();
 
   // Detect click outside and close menu
   useEffect(() => {
@@ -30,10 +32,23 @@ const Navbar = ({ setShowMedicationModal }) => {
           {/* Add Medication Modal */}
           <button
             className={styles.addButton}
+            onClick={() => navigate("/today")}>
+            <span className={styles.listIcon}></span>
+            <span className={styles.addText}>Hoy</span>
+          </button>
+          <button
+            className={styles.addButton}
             onClick={() => setShowMedicationModal(true)}
           >
             <span className={styles.addIcon}>+</span>
             <span className={styles.addText}>Medicamento</span>
+          </button>
+
+          <button
+            className={styles.addButton}
+            onClick={() => navigate("/medicineList")}>
+            <span className={styles.listIcon}></span>
+            <span className={styles.addText}>Lista Medicamentos</span>
           </button>
 
           {/* User Menu */}
@@ -72,7 +87,7 @@ const Navbar = ({ setShowMedicationModal }) => {
           </div>
         </div>
       </div>
-    </nav>
+    </nav >
   );
 };
 

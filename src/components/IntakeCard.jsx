@@ -3,45 +3,53 @@ import styles from "./IntakeCard.module.css";
 
 const statusMap = {
   PENDING: "Pendiente",
-  TAKEN: "Tomada",
-  MISSED: "Perdida"
+  TAKEN: "✅ Tomada",
+  MISSED: "Perdida",
 };
 
 const statusClassMap = {
   PENDING: "status-pending",
   TAKEN: "status-taken",
-  MISSED: "status-missed"
+  MISSED: "status-missed",
 };
 
-const IntakeCard = ({ name, description, dosage, status, slot, onUpdateStatus }) => {
+const IntakeCard = ({ name, dosage, status, description, onUpdateStatus }) => {
   return (
-    <div className={styles["intake-card"]}>
+    <div className={`${styles["intake-card"]} ${styles[status.toLowerCase()]}`}>
+      {/* Header */}
       <div className={styles["intake-header"]}>
         <h3 className={styles["intake-name"]}>{name}</h3>
-      </div>
-      <div className={styles["intake-body"]}>
-        <p className={styles["intake-slot"]}>🕒 Horario: {slot}</p>
-        <p className={`${styles["intake-status"]} ${styles[statusClassMap[status]]}`}>
+        <span
+          className={`${styles["intake-status"]} ${styles[statusClassMap[status]]}`}
+        >
           {statusMap[status] || status}
-        </p>
+        </span>
+      </div>
+
+      {/* Divider */}
+      <div className={styles["intake-divider"]}></div>
+
+      {/* Body */}
+      <div className={styles["intake-body"]}>
         <p className={styles["intake-dosage"]}>💊 Dosis: {dosage}</p>
-        <p className={styles["intake-description"]}>Descripción: {description}</p>
+        <p className={styles["intake-description"]}> 📋 Descripción: {description}</p>
 
         {status !== "TAKEN" ? (
           <button
-            className={styles["intake-btn"]}
+            className={`${styles["intake-btn-pending"]}`}
             onClick={() => onUpdateStatus("TAKEN")}
           >
             Marcar como tomada
           </button>
         ) : (
           <button
-            className={styles["intake-btn"]}
+            className={`${styles["intake-btn-taken"]}`}
             onClick={() => onUpdateStatus("PENDING")}
           >
-            Marcar como no tomada
+            Marcar como pendiente
           </button>
         )}
+
       </div>
     </div>
   );
