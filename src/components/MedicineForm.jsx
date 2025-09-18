@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createMedicine } from "../services/Service.jsx";
+import styles from "./MedicineForm.module.css"
 
 const MedicineForm = () => {
     const [form, setForm] = useState({
@@ -7,6 +8,7 @@ const MedicineForm = () => {
         dose: "",
         startDate: "",
         endDate: "",
+        description: "",
         intakeSlots: []
     });
 
@@ -29,10 +31,10 @@ const MedicineForm = () => {
         e.preventDefault();
         try {
             const response = await createMedicine(form);
-            console.log("Medicamento criado:", response);
+            console.log("Medicine created: ", response);
             handleReset();
         } catch (err) {
-            console.error("Erro ao criar medicamento:", err);
+            console.error("Error creating medicine: ", err);
         }
     };
 
@@ -42,72 +44,110 @@ const MedicineForm = () => {
             dose: "",
             startDate: "",
             endDate: "",
+            description: "",
             intakeSlots: [],
         });
     };
+    const today = new Date().toISOString().split("T")[0];
 
     return (
-        <form className="form-background" onSubmit={handleSubmit}>
-            <input
-                type="text"
-                name="name"
-                placeholder="Medicamento"
-                value={form.name}
-                onChange={handleChange}
-            />
-            <input
-                type="text"
-                name="dose"
-                placeholder="Dosis"
-                value={form.dose}
-                onChange={handleChange}
-            />
-            <input
-                type="date"
-                name="startDate"
-                value={form.startDate}
-                onChange={handleChange}
-            />
-            <input
-                type="date"
-                name="endDate"
-                value={form.endDate}
-                onChange={handleChange}
-            />
+        <div>
+            <h1 className="text-center">Agregar Medicamiento</h1>
+            <form className={`form-background ${styles.formGroup}`} onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor="name">Nombre Medicamento: </label>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Ej: Metformina"
+                        value={form.name}
+                        onChange={handleChange}
+                        className={styles.inputSpacing}
+                        required
+                    />
+                </div>
+                <div>
+                    <label htmlFor="dose">Dosis: </label>
+                    <input
+                        type="text"
+                        name="dose"
+                        placeholder="Ej: 850mg"
+                        value={form.dose}
+                        onChange={handleChange}
+                        className={styles.inputSpacing}
+                        required
+                    />
+                </div>
+                <div>
+                    <label htmlFor="startDate">Fecha de inicio: </label>
+                    <input
+                        type="date"
+                        name="startDate"
+                        value={form.startDate}
+                        onChange={handleChange}
+                        className={styles.dateInput}
+                        min={today}
+                        required
+                    />
+                </div>
+                <div>
+                    <label htmlFor="endDate">Fecha de finalización: </label>
+                    <input
+                        type="date"
+                        name="endDate"
+                        value={form.endDate}
+                        onChange={handleChange}
+                        className={styles.dateInput}
+                        min={today}
+                        required
+                    />
+                </div>
+                <label htmlFor="description">Descripción: </label>
+                <input
+                    type="text"
+                    name="description"
+                    placeholder="Ej: Para control de glucosa"
+                    value={form.description}
+                    onChange={handleChange}
+                    className="input-spacing"
+                />
+                <div className={styles.intakeSlots}>
+                    <label htmlFor="" >Horario:</label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="DESAYUNO"
+                            checked={form.intakeSlots.includes("DESAYUNO")}
+                            onChange={handleCheckbox}
+                        />
+                        Desayuno
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="COMIDA"
+                            checked={form.intakeSlots.includes("COMIDA")}
+                            onChange={handleCheckbox}
+                        />
+                        Comida
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="CENA"
+                            checked={form.intakeSlots.includes("CENA")}
+                            onChange={handleCheckbox}
+                        />
+                        Cena
+                    </label>
+                </div>
 
-            <label>
-                <input
-                    type="checkbox"
-                    value="DESAYUNO"
-                    checked={form.intakeSlots.includes("DESAYUNO")}
-                    onChange={handleCheckbox}
-                />
-                Desayuno
-            </label>
-            <label>
-                <input
-                    type="checkbox"
-                    value="COMIDA"
-                    checked={form.intakeSlots.includes("COMIDA")}
-                    onChange={handleCheckbox}
-                />
-                Comida
-            </label>
-            <label>
-                <input
-                    type="checkbox"
-                    value="CENA"
-                    checked={form.intakeSlots.includes("CENA")}
-                    onChange={handleCheckbox}
-                />
-                Cena
-            </label>
-
-            <button className="btn-outline" type="submit">Submit</button>
-            <button type="button" onClick={handleReset}>
-                Reset
-            </button>
-        </form>
+                <div className={styles.buttonGroup}>
+                    <button className="btn-filled input-spacing" type="submit">Agregar</button>
+                    <button className="btn-outline input-spacing" type="button" onClick={handleReset}>Limpiar</button>
+                </div>
+            </form>
+        </div >
     );
 };
 
