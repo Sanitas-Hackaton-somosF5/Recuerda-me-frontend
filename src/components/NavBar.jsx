@@ -1,8 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./Navbar.module.css";
 
 const Navbar = ({ setShowMedicationModal }) => {
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const userMenuRef = useRef(null);
+
+  // Detectar clic fuera y cerrar menú
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
+        setShowUserMenu(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <nav className={styles.navbar}>
@@ -25,7 +37,7 @@ const Navbar = ({ setShowMedicationModal }) => {
           </button>
 
           {/* User Menu */}
-          <div className={styles.userMenu}>
+          <div className={styles.userMenu} ref={userMenuRef}>
             <button
               className={styles.userButton}
               onClick={() => setShowUserMenu(!showUserMenu)}
