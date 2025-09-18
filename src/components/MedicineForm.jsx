@@ -52,7 +52,7 @@ const MedicineForm = () => {
 
     return (
         <div>
-            <h2 className="text-center">Agregar Medicamiento</h2>
+            <h2 className="text-center">Agregar Medicamento</h2>
             <form className={`form-background ${styles.formGroup}`} onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Nombre Medicamento: </label>
