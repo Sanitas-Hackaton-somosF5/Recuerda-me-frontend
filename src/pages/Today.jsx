@@ -3,6 +3,7 @@ import IntakeCard from '../components/IntakeCard';
 import TodayTimeStamp from '../components/TodayTimeStamp';
 import styles from './Today.module.css';
 import Header from '../components/Header';
+import { getAllIntakes } from '../services/Service';
 
 const slotOrder = ["DESAYUNO", "COMIDA", "CENA"];
 
@@ -10,8 +11,7 @@ const Today = () => {
     const [intakes, setIntakes] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3001/intakes-today")
-            .then(res => res.json())
+        getAllIntakes()
             .then(data => setIntakes(data))
             .catch(err => console.error("Error fetching intakes:", err));
     }, []);

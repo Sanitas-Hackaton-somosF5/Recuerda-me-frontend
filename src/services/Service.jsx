@@ -77,7 +77,7 @@ export async function createIntake(intake) {
 export async function getAllIntakes() {
     try {
         const res = await fetch(URL_API_INTAKES_TODAY);
-        console.log(res);
+        //console.log(res);
         return await res.json();
     } catch (err) {
         console.error(err);
