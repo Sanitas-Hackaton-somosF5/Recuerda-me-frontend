@@ -12,7 +12,7 @@ const routerRecuerda = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Home />,
+                element: <Today />,
             },
             {
                 path: "today",
