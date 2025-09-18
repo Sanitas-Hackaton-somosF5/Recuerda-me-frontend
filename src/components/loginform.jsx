@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import authService from '../services/authservice';
+import authService from '../services/authservice.js';
 
 export default function LoginForm() {
     const [formData, setFormData] = useState({
@@ -33,8 +33,6 @@ export default function LoginForm() {
 
 
             await new Promise(resolve => setTimeout(resolve, 1000));
-
-            // Redirigir o mostrar éxito
             alert('Login exitoso!');
 
         } catch (err) {
@@ -93,7 +91,6 @@ export default function LoginForm() {
                 </label>
             </div>
 
-            {/* Botón submint */}
             <button
                 type="submit"
                 className="btn-filled"

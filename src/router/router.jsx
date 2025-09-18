@@ -26,7 +26,10 @@ const routerRecuerda = createBrowserRouter([
             {
                 path: "login",
                 element: <Login />,
-            },
+            },{
+                path: "register",
+                element: <Register />,
+            }
         ],
     },
     //SIN NAV Y FOOTER

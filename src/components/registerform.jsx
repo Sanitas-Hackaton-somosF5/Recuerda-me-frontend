@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import authService from '../services/authservice';
+import authService from '../services/authservice.js';
 
 
 export default function RegisterForm() {
