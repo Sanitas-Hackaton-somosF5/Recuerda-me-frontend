@@ -50,7 +50,6 @@ body {
   Fuente consistente, color, margen y altura de línea para elementos de texto
   ======================== */
 
-/*h1*/,
 h2,
 h3,
 h4 {
@@ -468,5 +467,167 @@ textarea:disabled {
     font-size: 0.98rem;
     padding: 0.65em 0.5em;
     margin-bottom: 0.5em;
+  }
+}
+
+
+.auth-page-wrapper {
+  max-width: 450px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  color: var(--color-text);
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/*
+   Estilos para formularios de login
+ */
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.checkbox-group {
+  margin: 1.2rem 0;
+  text-align: left;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/*
+   Enlaces de autenticación
+*/
+
+.auth-links {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.auth-links p {
+  margin-bottom: 0.8rem;
+}
+
+.link-primary {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.link-primary:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.link-secondary {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.link-secondary:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* 
+   Estados del formulario
+    */
+
+.error-message {
+  background-color: rgba(226, 16, 36, 0.1);
+  border: 1px solid var(--color-alert);
+  border-radius: 6px;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  background-color: rgba(42, 122, 42, 0.1);
+  border: 1px solid #2a7a2a;
+  color: #2a7a2a;
+  border-radius: 6px;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+
+@media (max-width: 768px) {
+  .auth-page-wrapper {
+    max-width: 90%;
+    margin: 1.5rem auto;
+  }
+  
+  .auth-header h1 {
+    font-size: 2rem;
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .auth-page-wrapper {
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 0 0.8rem;
+  }
+  
+  .auth-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .auth-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .auth-header p {
+    font-size: 0.95rem;
+  }
+  
+  .form-background {
+    padding: 1rem;
+  }
+  
+  .input-group {
+    margin-bottom: 0.8rem;
+  }
+  
+  .checkbox-group {
+    margin: 1rem 0;
+  }
+  
+  .auth-links {
+    margin-top: 1.5rem;
+  }
+  
+  .auth-links p {
+    font-size: 0.9rem;
   }
 }
