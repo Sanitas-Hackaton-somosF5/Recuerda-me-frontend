@@ -1,6 +1,8 @@
 import React from 'react'
-const URL_API_MEDICINE = "http://localhost:3001/medicines/";
-const URL_API_INTAKES_TODAY = "http://localhost:3001/intakes-today";
+const URL_API_MEDICINE = "http://localhost:8080/api/v1/medications";
+const URL_API_GET_MEDICINE_BY_USER = "http://localhost:8080/api/v1/medications/user/1";
+const URL_API_INTAKES_TODAY = "http://localhost:8080/api/v1/intakes/today";
+const URL_API_INTAKES = "http://localhost:8080/api/v1/intakes";
 
 
 export async function createMedicine(medicine) {
@@ -18,7 +20,7 @@ export async function createMedicine(medicine) {
 
 export async function getAllMedicines() {
     try {
-        const res = await fetch(URL_API_MEDICINE);
+        const res = await fetch(URL_API_GET_MEDICINE_BY_USER);
         console.log(res);
         return await res.json();
     } catch (err) {
@@ -28,7 +30,7 @@ export async function getAllMedicines() {
 
 export async function getMedicineById(id) {
     try {
-        const res = await fetch(`${URL_API_MEDICINE}${id}`);
+        const res = await fetch(`${URL_API_MEDICINE}/${id}`);
         return await res.json();
     } catch (err) {
         console.error(err);
@@ -37,7 +39,7 @@ export async function getMedicineById(id) {
 
 export async function updateMedicine(id, updatedData) {
     try {
-        const res = await fetch(`${URL_API_MEDICINE}${id}`, {
+        const res = await fetch(`${URL_API_MEDICINE}/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updatedData)
@@ -50,7 +52,7 @@ export async function updateMedicine(id, updatedData) {
 
 export async function deleteMedicine(id) {
     try {
-        const res = await fetch(`${URL_API_MEDICINE}${id}`, {
+        const res = await fetch(`${URL_API_MEDICINE}/${id}`, {
             method: "DELETE"
         });
         return res.ok; // true si se eliminó correctamente
@@ -95,7 +97,7 @@ export async function getIntakeById(id) {
 }
 
 // Actualizar toma
-export async function updateIntake(id, status) {
+/*export async function updateIntake(id, status) {
     try {
         const res = await fetch(`${URL_API_INTAKES_TODAY}/${id}/${TAKEN}`, {
             method: "PUT", //Patch
@@ -106,7 +108,24 @@ export async function updateIntake(id, status) {
     } catch (err) {
         console.error(err);
     }
+}*/
+
+
+export async function updateIntake(id, status) {
+    // TAKEN, PENDING, MISSED...
+    try {
+        const res = await fetch(`${URL_API_INTAKES}/${id}/${status}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" }
+        });
+        return res.ok; 
+    } catch (err) {
+        console.error(err);
+        return false;
+    }
 }
+
+
 
 // Eliminar toma
 export async function deleteIntake(id) {

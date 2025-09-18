@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./MedicineCard.module.css";
 
 const MedicineCard = ({ id, name, dose, startDate, endDate, description, onDelete }) => {
+    const formatDate = (dateStr) => {
+        const [year, month, day] = dateStr.split("-");
+        return `${day}-${month}-${year}`;
+    };
     return (
         <div className={styles["medicine-card"]}>
             <div className={styles["medicine-header"]}>
@@ -11,7 +15,7 @@ const MedicineCard = ({ id, name, dose, startDate, endDate, description, onDelet
             <div className={styles["medicine-divider"]}></div>
             <div>
                 <p className={styles["medicine-dosage"]}>💊 Dosis: {dose}</p>
-                <p className={styles["medicine-dates"]}>📅 {startDate} a {endDate}</p>
+                <p className={styles["medicine-dates"]}>📅 {formatDate(startDate)} a {formatDate(endDate)}</p>
                 {description && <p>📋 {description}</p>}
             </div>
         </div>
