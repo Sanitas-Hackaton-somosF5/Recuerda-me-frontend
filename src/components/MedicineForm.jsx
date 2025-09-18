@@ -116,8 +116,8 @@ const MedicineForm = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="DESAYUNO"
-                            checked={form.intakeSlots.includes("DESAYUNO")}
+                            value="BREAKFAST"
+                            checked={form.intakeSlots.includes("BREAKFAST")}
                             onChange={handleCheckbox}
                         />
                         Desayuno
@@ -125,8 +125,8 @@ const MedicineForm = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="COMIDA"
-                            checked={form.intakeSlots.includes("COMIDA")}
+                            value="LUNCH"
+                            checked={form.intakeSlots.includes("LUNCH")}
                             onChange={handleCheckbox}
                         />
                         Comida
@@ -134,8 +134,8 @@ const MedicineForm = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="CENA"
-                            checked={form.intakeSlots.includes("CENA")}
+                            value="DINNER"
+                            checked={form.intakeSlots.includes("DINNER")}
                             onChange={handleCheckbox}
                         />
                         Cena
