@@ -1,78 +1,135 @@
+/* ================================
+   Card Container
+   ================================ */
 .intake-card {
-    background: white;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 16px;
-
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-left: 4px solid rgb(0, 121, 200);
-    transition: transform 0.2s;
-
-    width: 100%;
-    
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-left: 4px solid rgb(0, 121, 200);
+  transition: transform 0.2s;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .intake-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.intake-header .intake-body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
+/* ================================
+   Card Background by Status
+   ================================ */
+.intake-card.pending {
+  background-color: #f5f5f5; /* light gray for pending */
+}
+
+.intake-card.taken {
+  background-color: #e6f9e6; /* very light green for taken */
+}
+
+.intake-card.missed {
+  background-color: #ffe6e6; /* very light red for missed */
+}
+
+/* ================================
+   Header: Name and Status
+   ================================ */
+.intake-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .intake-name {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
 }
 
-.intake-description {
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 500;
-    color: grey;
-}
-
-.intake-dosage {
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 500;
-    color: lightcoral
+.intake-status {
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .status-pending {
   color: #e1a100;
-  font-weight: 600;
 }
 
 .status-taken {
   color: #0a8a0a;
-  font-weight: 600;
 }
 
 .status-missed {
   color: #e21024;
-  font-weight: 600;
 }
 
-.intake-btn {
-  margin-top: 8px;
-  padding: 6px 12px;
-  background-color: rgb(0, 121, 200);
+/* ================================
+   Divider
+   ================================ */
+.intake-divider {
+  border-top: 1px solid #e5e5e5;
+  margin: 12px 0;
+}
+
+/* ================================
+   Body: Dosage and Action Button
+   ================================ */
+.intake-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intake-dosage, 
+.intake-description {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* ================================
+   Buttons: Uniform & Responsive
+   ================================ */
+.intake-btn-taken {
+  background-color: rgb(178, 178, 178);
   color: white;
+}
+
+.intake-btn-pending {
+  background-color: #0a8a0a;
+  color: white;
+}
+
+/* Shared button styles */
+.intake-btn-taken,
+.intake-btn-pending {
+  padding: 6px 12px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
   transition: opacity 0.2s;
+
+  width: 100%;
+  max-width: 180px;
+  min-width: 140px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.intake-btn:hover {
+.intake-btn-taken:hover,
+.intake-btn-pending:hover {
   opacity: 0.8;
+}
+
+/* ================================
+   Responsive: Mobile Adjustments
+   ================================ */
+@media (max-width: 480px) {
+  .intake-btn-taken,
+  .intake-btn-pending {
+    width: 100%;
+    max-width: 100%;
+  }
 }
