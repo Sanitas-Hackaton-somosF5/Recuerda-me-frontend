@@ -35,7 +35,7 @@ const Footer = () => {
           {/* Additional info */}
           <div className={styles.additional}>
             <p>Equipo 5 de desarrollo</p>
-            <p>Alexandra, Paula, Jesús, Mariany, Lara, Mari Carmen</p>
+            <p>Lara Pla, Alexandra Rojas, Paula Apsé, Jesús Martín, Mariany Araujo, Mari Carmen Tajuelo</p>
             <p>Desarrollando soluciones innovadoras para el cuidado de la salud</p>
             <p>© 2025 - Proyecto Hackathon</p>
           </div>
